@@ -1,0 +1,44 @@
+import javax.swing.JOptionPane;
+
+public class App {
+    public static void main(String[] args) {
+
+        // Arreglo ordenado
+        int[] v = {15, 20, 30, 45, 50, 55, 65, 70, 80, 90};
+
+        int dato;
+
+        dato = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el número a buscar:"));
+
+        int posicion = binaria(v, dato);
+
+        if (posicion != -1) {
+            JOptionPane.showMessageDialog(null,
+                    "El valor fue encontrado en la posición " + posicion);
+        } else {
+            JOptionPane.showMessageDialog(null,
+                    "No se encontró el valor buscado.");
+        }
+    }
+
+    public static int binaria(int[] v, int dato) {
+
+        int inicio = 0;
+        int fin = v.length - 1;
+
+        while (inicio <= fin) {
+
+            int medio = (inicio + fin) / 2;
+
+            if (v[medio] == dato) {
+                return medio;
+            } else if (dato < v[medio]) {
+                fin = medio - 1;
+            } else {
+                inicio = medio + 1;
+            }
+        }
+
+        return -1;
+    }
+}
