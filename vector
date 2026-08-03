@@ -1,0 +1,28 @@
+import java.util.Vector;
+
+public class App {
+
+
+
+      public static void main(String[] args) throws Exception {
+      int[]vector = new int[11];   
+    
+      int clave = 38;
+
+      int posicion = clave % Vector.length;
+
+    vector [posicion]=clave;
+     System.out.println("la clave: " + clave + se guardo correctamente" + posicion );
+
+     int buscar = 38;
+     
+     int posBuscar = buscar % vector.length;
+    
+     if(vector[posBuscar]== buscar){
+        System.out.println(" la clave fue encontrada en la posicion" + posBuscar);
+     }else{
+          System.out.println("la clave no fue encontrada");
+
+
+    }  
+}
